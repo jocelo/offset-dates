@@ -1,0 +1,12 @@
+<!doctype HTML>
+<html>
+<head> <title></title> </head>
+<body>
+    <p> Current Date: <strong> <span id="currDay"></span> <strong> </p>
+    <script src="offsetDates.js"></script>
+    <script>
+        var dates = gsDate.currentWeek();
+        document.getElementById("currDay").innerHTML = dates.startDate;
+    </script>
+</body>
+</html>
