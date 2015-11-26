@@ -1,29 +1,53 @@
 gsDate = (function() {
-    var _currDate = new Date(),
-        _startDate = new Date(),
-        _endDate = new Date(),
-        userFormat = false,
-        init = function() {},
+    var _currDate,
+        _theDate,
+        _dates,
+        _range,
+        _userFormat = false,
+        init = function() {
+            _currDate = new Date();
+            _range = false;
+        },
+        getDate = function() {
+            return _currDate.toString();
+        },
         setCurrentDate = function() {
             _currDate = new Date();
             return this;
         },
-        setFormat = function(newFormat) {
-            userFormat = true;
+        setRange = function() {
+            _dates = {
+                'startDate':_currDate,
+                'endDate':_currDate
+            };
+            _range = true;
             return this;
         },
-        returnDates = function() {
-            var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+        setSingle = function() {
+            _theDate = _currDate;
+            _range = false;
+            return this;
+        },
+        setFormat = function(newFormat) {
+            _userFormat = true;
+            return this;
+        },
+        returnFnc = function() {
+            var goAndFly = '',
+                months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
                 shortMonths = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sept','Oct','Nov','Dec'];
-            if (userFormat) {
-                _startDate = _startDate.getDate()+'-'+shortMonths[_startDate.getMonth()]+'-'+_startDate.getFullYear();
-                _endDate = _endDate.getDate()+'-'+shortMonths[_endDate.getMonth()]+'-'+_endDate.getFullYear();
+            if (_userFormat) {
+                if (_range) {
+                    _dates.startDate = _startDate.getDate()+'-'+shortMonths[_startDate.getMonth()]+'-'+_startDate.getFullYear();
+                    _dates.endDate = _endDate.getDate()+'-'+shortMonths[_endDate.getMonth()]+'-'+_endDate.getFullYear();
+                    goAndFly = _dates;
+                } else {
+                    _theDate = _startDate.getDate()+'-'+shortMonths[_startDate.getMonth()]+'-'+_startDate.getFullYear();
+                    goAndFly = _theDate;
+                }
             }
 
-            return {
-                startDate:_startDate,
-                endDate:_endDate
-            };
+            return goAndFly;
         },
         /*
         / Weeks
@@ -109,15 +133,20 @@ gsDate = (function() {
             _endDate = new Date(_currDate.getFullYear(), quarterMonth+3, 0, 23, 59, 59);
             return returnDates();
         };
+        init();
 
     return {
         format: setFormat,
+        range: setRange,
+        single: setSingle,
+        output: returnFnc,
         setDate: setCurrentDate,
-        currentWeek: ddWeek,
-        currentMonth: ddMonth,
-        currentYear: ddYear,
-        currentQuarter: ddQuarter,
-        yearToDate: yearToDate,
+        getDate: getDate,
+        getCurrentWeek: ddWeek,
+        getCurrentMonth: ddMonth,
+        getCurrentYear: ddYear,
+        getCurrentQuarter: ddQuarter,
+        getYearToDate: yearToDate,
         offsetWeeks: offddWeek,
         offsetMonths: offddMonth,
         offsetYears: offddYear,

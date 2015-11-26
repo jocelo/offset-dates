@@ -5,8 +5,47 @@
     <p> Current Date: <strong> <span id="currDay"></span> <strong> </p>
     <script src="offsetDates.js"></script>
     <script>
-        var dates = gsDate.currentWeek();
-        document.getElementById("currDay").innerHTML = dates.startDate;
+        //document.getElementById("currDay").innerHTML = dates.startDate;
+        
+        console.log( gsDate.single().output() );
+        console.log( gsDate.range().output() );
+        
+        console.log( gsDate.single().format().output() );
+        console.log( gsDate.range().format().output() );
+
+        /*
+        console.log( 'setDate' );
+        console.log( gsDate.setDate() );
+        
+        console.log( 'getDate' );
+        console.log( gsDate.getDate() );
+        
+        console.log( 'currentWeek' );
+        console.log( gsDate.format().getCurrentWeek() );
+        
+        console.log( 'currentMonth' );
+        console.log( gsDate.format().getCurrentMonth() );
+        
+        console.log( 'currentYear' );
+        console.log( gsDate.format().getCurrentYear() );
+        
+        console.log( 'currentQuarter' );
+        console.log( gsDate.format().getCurrentQuarter() );
+        
+        console.log( 'yearToDate' );
+        console.log( gsDate.format().getYearToDate() );
+        
+        console.log( 'offsetWeeks' );
+        console.log( gsDate.format().offsetWeeks(-50) );
+        
+        console.log( 'offsetMonths' );
+        
+        console.log( 'offsetYears' );
+        
+        console.log( 'offsetQuarters' );
+        
+        console.log( 'last4Quarters' );
+        */
     </script>
 </body>
 </html>
