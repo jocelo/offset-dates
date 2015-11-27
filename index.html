@@ -7,11 +7,20 @@
     <script>
         //document.getElementById("currDay").innerHTML = dates.startDate;
         
-        console.log( gsDate.single().output() );
-        console.log( gsDate.range().output() );
+        // console.log('sin nada');
+        // console.log( gsDate.single().output() );
+        // console.log( gsDate.range().output() );
         
-        console.log( gsDate.single().format().output() );
-        console.log( gsDate.range().format().output() );
+        // console.log('asdfasfdasf');
+        // console.log( gsDate.single().output('adsf') );
+        // console.log( gsDate.range().output('asdf') );
+
+        console.log( gsDate.output() );
+        console.log( gsDate.offset(2,'weeks').output() );
+
+        console.log( gsDate.range().output() );
+        console.log( gsDate.range().offset(2,'weeks').output() );
+        // console.log( gsDate.range().offset(4,'weeks') );
 
         /*
         console.log( 'setDate' );
