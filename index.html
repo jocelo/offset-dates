@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>Offset-dates by jocelo</title>
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="inner">
+
+        <header>
+          <h1>Offset-dates</h1>
+          <h2>js library to play with dates</h2>
+        </header>
+
+        <section id="downloads" class="clearfix">
+          <a href="https://github.com/jocelo/offset-dates/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
+          <a href="https://github.com/jocelo/offset-dates/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
+          <a href="https://github.com/jocelo/offset-dates" id="view-on-github" class="button"><span>View on GitHub</span></a>
+        </section>
+
+        <hr>
+
+        <section id="main_content">
+          <h1>
+<a id="offset-dates" class="anchor" href="#offset-dates" aria-hidden="true"><span class="octicon octicon-link"></span></a>offset-dates</h1>
+
+<p>js library to play with dates</p>
+
+<p>Lightweigth library to calculate different dates and ranges.</p>
+
+<p>Current version 0.1.11</p>
+
+<p>To start using the offsetdate library you just need to include the js file into your code.</p>
+
+<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>offsetdates.min.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</pre></div>
+
+<p>You don't have to initialize the library, once the js file is included the object is ready to be used.
+You can (and it's strongly recommended that you should) chain functions... even when you can do this:</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> date1 <span class="pl-k">=</span> <span class="pl-en">od</span>();
+<span class="pl-smi">date1</span>.<span class="pl-en">range</span>();
+<span class="pl-smi">date1</span>.<span class="pl-en">offset</span>(<span class="pl-k">-</span><span class="pl-c1">2</span>,<span class="pl-s"><span class="pl-pds">'</span>weeks<span class="pl-pds">'</span></span>);
+<span class="pl-smi">date1</span>.<span class="pl-en">output</span>();</pre></div>
+
+<p>you should do this instead:</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-en">od</span>().<span class="pl-en">range</span>(<span class="pl-s"><span class="pl-pds">'</span>week<span class="pl-pds">'</span></span>).<span class="pl-en">offset</span>(<span class="pl-k">-</span><span class="pl-c1">2</span>, <span class="pl-s"><span class="pl-pds">'</span>weeks<span class="pl-pds">'</span></span>).<span class="pl-en">output</span>();</pre></div>
+
+<p>The offsetdates methods (od from now on) can be divided into sections:</p>
+
+<p>(1) initialization | (2) operations | (3) formatting | (4) special functions</p>
+
+<h3>
+<a id="1-initialization" class="anchor" href="#1-initialization" aria-hidden="true"><span class="octicon octicon-link"></span></a>1) Initialization</h3>
+
+<h4>
+<a id="single" class="anchor" href="#single" aria-hidden="true"><span class="octicon octicon-link"></span></a>single</h4>
+
+<p>default usage, one date will be created
+usage od.single();
+no parameters
+returns: none</p>
+
+<p>examples:</p>
+
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>od.single()</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<h4>
+<a id="range" class="anchor" href="#range" aria-hidden="true"><span class="octicon octicon-link"></span></a>range</h4>
+
+<p>You can calculate dates or ranges of dates. two dates will be created: startDate and endDate</p>
+
+<p>usage range([period])
+where
+    period: week|month|year|quarter
+returns: none</p>
+
+<p>example:
+| Code        | Output |
+| ----------- | ------ |
+| od.range()  |        |
+| od.range('week') |        |</p>
+
+<p>od()
+od().range()
+od().range('week')</p>
+
+<h3>
+<a id="2-operations" class="anchor" href="#2-operations" aria-hidden="true"><span class="octicon octicon-link"></span></a>2) Operations</h3>
+
+<h4>
+<a id="offset" class="anchor" href="#offset" aria-hidden="true"><span class="octicon octicon-link"></span></a>offset</h4>
+
+<p>offset an specific period of time to the calculated dates
+usage: .offset(amount,period)
+where:
+    amount: Integer number for the jump
+    period: string representation of period, can be weeks|months|years|periods
+returns: none</p>
+
+<p>examples:
+od.range('week').offset(1,'week').output()
+od.range('week').offset(-1,'week').output()</p>
+
+<h4>
+<a id="beginofday" class="anchor" href="#beginofday" aria-hidden="true"><span class="octicon octicon-link"></span></a>beginOfDay</h4>
+
+<p>set the time 0:0:00 0000 (hours, minutes, seconds and miliseconds to the specified date, the parameter can be used to set the begin of date to the endDate, for when you are using range
+usage: beginOfDay([useEndDate])
+where:
+    endDate: if specified, the time 0:0:00 will be set to the end date (when range used)
+returns: none</p>
+
+<h4>
+<a id="endofday" class="anchor" href="#endofday" aria-hidden="true"><span class="octicon octicon-link"></span></a>endOfDay</h4>
+
+<p>set the time 23:59:59 99 (hours, minutes, seconds and miliseconds to the specified date, the parameter can be used to set the begin of date to the endDate, for when you are using range
+usage: endOfDay([useEndDate])
+where:
+    endDate: if specified, the time 0:0:00 will be set to the end date (when range used)
+returns: none</p>
+
+<h3>
+<a id="3-formatting" class="anchor" href="#3-formatting" aria-hidden="true"><span class="octicon octicon-link"></span></a>3) Formatting</h3>
+
+<h4>
+<a id="output" class="anchor" href="#output" aria-hidden="true"><span class="octicon octicon-link"></span></a>output</h4>
+
+<p>Returns the calculated dates, if no parameter is used, the method will return the date objects, string formatted otherwise
+usage output([format])
+where
+    format can be an standar js date format 
+returns: none</p>
+
+<p>examples:
+od.output()
+od.simple().output
+od.range('week').output()
+od.range('week').output(1)</p>
+
+<h3>
+<a id="4-special-functions" class="anchor" href="#4-special-functions" aria-hidden="true"><span class="octicon octicon-link"></span></a>4) Special functions:</h3>
+
+<p>These methods should be used directly, no configuration needed.</p>
+
+<h4>
+<a id="getholidays" class="anchor" href="#getholidays" aria-hidden="true"><span class="octicon octicon-link"></span></a>getHolidays</h4>
+
+<p>get an array with the holidays for the specified location
+usage: getHolidays([country])
+where:
+    country could be us|mx
+by default, the us holidays will be returned
+returns: array with date objects, from holidays within specified year
+( can be used with offset, to retrieve holidays from a specific year )</p>
+
+<h3>
+<a id="todo" class="anchor" href="#todo" aria-hidden="true"><span class="octicon octicon-link"></span></a>TODO</h3>
+
+<p>In future commits, the following items will be included:</p>
+
+<ul>
+<li>Custom date for library initialization</li>
+<li>Fiscal Week of current week</li>
+<li>First day of month</li>
+<li>Last day of month</li>
+<li>Mutiple dates array results, to be used in select</li>
+<li>Test cases</li>
+</ul>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p>offsetDates.js is freely distributable under the terms of the <a href="https://github.com">MIT license</a>.</p>
+        </section>
+
+        <footer>
+          Offset-dates is maintained by <a href="https://github.com/jocelo">jocelo</a><br>
+          This page was generated by <a href="https://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
+        </footer>
+
+        
+      </div>
+    </div>
+  </body>
+</html>
