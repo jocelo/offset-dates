@@ -125,3 +125,7 @@ In future commits, the following items will be included:
 * Last day of month
 * Mutiple dates array results, to be used in select
 * Test cases
+
+## License
+
+Moment.js is freely distributable under the terms of the [MIT license](https://github.com).
