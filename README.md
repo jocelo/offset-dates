@@ -128,4 +128,4 @@ In future commits, the following items will be included:
 
 ## License
 
-Moment.js is freely distributable under the terms of the [MIT license](https://github.com).
+offsetDates.js is freely distributable under the terms of the [MIT license](https://github.com).
