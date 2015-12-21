@@ -48,19 +48,19 @@ There are two initialization modes, single mode is the default one.
 #### single()
 Default usage, an object with a single date will be created.
 
-**Usage:** od.single()  
-**Parameters:** none  
-**Returns:** none  
+- *Usage:* od.single()  
+- *Parameters:* none  
+- *Returns:* none  
 
 #### range()
 You can calculate dates or ranges of dates. two dates will be created: *startDate* and *endDate*. If no period is specified, both start and end date will hold the same date/time value.
 
-**Usage:** od.range( [period] )  
-**Parameters:**  
-- *[period]* String with possible values: week|month|year|quarter
+- *Usage:* od.range( [period] )  
+- *Parameters:*  
+  - *[period]* String with possible values: week|month|year|quarter
 
-**Return:** none  
-**Example:**  
+- *Return:* none  
+- *Example:*  
 ```javascript
 od();
 od().range();
@@ -72,13 +72,13 @@ od().range('week');
 #### offset()
 Offset (adds or subtract) a specific period of time to the calculated dates, accordingly to the parameters used.
 
-**Usage:** offset( amount, period )  
-**Parameters:**  
-- *amount*: Integer number, used to skip specified period of time.
-- *period*: String value, representation of the period, can be weeks|months|years|periods
+- *Usage:* offset( amount, period )  
+- *Parameters:*  
+  - *amount*: Integer number, used to skip specified period of time.
+  - *period*: String value, representation of the period, can be weeks|months|years|periods
 
-**Return:** none  
-**Example:**  
+- *Return:* none  
+- *Example:*  
 ```javascript
 od.range('week').offset(1,'week');
 od.range('week').offset(-1,'week');
@@ -102,12 +102,12 @@ od.range('week').beginOfDay( true );
 #### endOfDay()
 Set time 23:59:59 9999 (hours, minutes, seconds and miliseconds) to the current od date. A parameter can be used to set the 0 time to the endDate (when using ranged dates).
 
-**Usage:** endOfDay( [useEndDate] )  
-**Parameters:**  
-- *[useEndDate]* Boolean, to specify if the time 0:0:00 will be set to the end date.
+- *Usage:* endOfDay( [useEndDate] )  
+- *Parameters:*  
+  - *[useEndDate]* Boolean, to specify if the time 0:0:00 will be set to the end date.
 
-**Return:** none  
-**Example:**
+- *Return:* none  
+- *Example:*
 ```javascript
 od.endOfDay('end');
 od.range('week').endOfDay( true );
@@ -120,12 +120,12 @@ Returns the current values of the date or an object with two dates (startDate an
 The method will return a date object (or a pair of such) if no parameter is used.
 If a parameter is used the method will return formatted string (or a pair of such).
 
-**Usage:** .output( [format] )  
-**Parameters:**  
-- *[format]* String with a standar js date format, more on js date formats on the [Language Specification](http://www.ecma-international.org/ecma-262/6.0/#sec-date-time-string-format).
+- *Usage:* .output( [format] )  
+- *Parameters:*  
+  - *[format]* String with a standar js date format, more on js date formats on the [Language Specification](http://www.ecma-international.org/ecma-262/6.0/#sec-date-time-string-format).
 
-**Return:** Date object or formatted string  
-**Example:**
+- *Return:* Date object or formatted string  
+- *Example:*
 ```javascript
 od.output();
 od.simple().output();
@@ -141,12 +141,12 @@ These methods should be used directly, no configuration needed.
 
 Returns an array with the holidays for the location on the parameters. US is the default location. You can use offset method to retrieve holidays from other years.
 
-**Usage:** getHolidays( [country_code] )  
-**Parameters:**  
-- *[country_code]* String with the country. Possible values: us|mx.
+- *Usage:* getHolidays( [country_code] )  
+- *Parameters:*  
+  - *[country_code]* String with the country. Possible values: us|mx.
 
-**Return:** array with date objects  
-**Example:**  
+- *Return:* array with date objects  
+- *Example:*  
 ```javascript
 od.output();
 od.simple().output();
@@ -155,6 +155,9 @@ od.range('week').output(1);
 ```
 
 ### TODO
+
+Some updates I'm including in future releases:
+
 - Custom date output format.
 - Fiscal Weeks.
 - First/last day of month/year.
