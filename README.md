@@ -150,7 +150,7 @@ od.range('week').output(1);
 
 ### TODO
 
-Some updates I'm including in future releases:
+Some updates to be including in future releases:
 
 - Custom date output format.
 - Fiscal Weeks.
