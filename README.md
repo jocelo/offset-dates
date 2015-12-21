@@ -48,19 +48,18 @@ There are two initialization modes, single mode is the default one.
 #### single()
 Default usage, an object with a single date will be created.
 
-- *Usage:* od.single()  
-- *Parameters:* none  
-- *Returns:* none  
+- *Usage:* od.single()
+- *Parameters:* none
+- *Returns:* none
 
 #### range()
 You can calculate dates or ranges of dates. two dates will be created: *startDate* and *endDate*. If no period is specified, both start and end date will hold the same date/time value.
 
-- *Usage:* od.range( [period] )  
-- *Parameters:*  
+- *Usage:* od.range( [period] )
+- *Parameters:*
   - *[period]* String with possible values: week|month|year|quarter
-
-- *Return:* none  
-- *Example:*  
+- *Return:* none
+- *Example:*
 ```javascript
 od();
 od().range();
