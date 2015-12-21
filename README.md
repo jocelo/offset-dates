@@ -87,12 +87,12 @@ od.range('week').offset(-1,'week');
 #### beginOfDay()
 Set time 0:0:00 0000 (hours, minutes, seconds and miliseconds) to the current od date. A parameter can be used to set the 0 time to the endDate (when using ranged dates).
 
-**Usage:** beginOfDay( [useEndDate] )  
-**Parameters:**   
+*Usage:* beginOfDay( [useEndDate] )  
+*Parameters:*  
 - *[useEndDate]* Boolean, to specify if the time 0:0:00 will be set to the end date.
 
-**Return:** none  
-**Example:**  
+*Return:* none  
+*E.g.*
 ```javascript
 od.beginOfDay();
 od.range('week').beginOfDay();
