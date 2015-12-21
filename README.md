@@ -118,7 +118,8 @@ If a parameter is used the method will return formatted string (or a pair of suc
 
 **Usage:** .output( [format] )  
 **Parameters:**  
-- *[format]* String with a standar js date format, more on js date formats on the [Language Specification](http://www.ecma-international.org/ecma-262/6.0/#sec-date-time-string-format).  
+- *[format]* String with a standar js date format, more on js date formats on the [Language Specification](http://www.ecma-international.org/ecma-262/6.0/#sec-date-time-string-format).
+
 **Returns:** Date object or formatted string  
 **Example:**
 ```javascript
