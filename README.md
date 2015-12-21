@@ -36,9 +36,11 @@ Couple of initialization methods.
 
 #### single
 Default usage, an object with a single date will be created.
- *usage* od.single();
- *parameters* none
- *returns* none
+
+*usage* od.single();
+*parameters* none
+
+*returns* none
 
 examples:
 
