@@ -69,12 +69,12 @@ od().range('week');
 ### 2) Operations
 
 #### offset
-Offset (adds or substract) a specific period of time to the calculated dates, accordingly to the parameters used.
+Offset (adds or subtract) a specific period of time to the calculated dates, accordingly to the parameters used.
 
 *Usage:* offset( amount, period )  
-*Parameters:*
+*Parameters:*  
 * **amount**: Integer number, used to skip specified period of time.
-* **period**: String value, representation of the period, can be weeks|months|years|periods 
+* **period**: String value, representation of the period, can be weeks|months|years|periods  
 *Returns:* none  
 *Example:*  
 ```javascript
@@ -85,48 +85,48 @@ od.range('week').offset(-1,'week');
 #### beginOfDay
 Set time 0:0:00 0000 (hours, minutes, seconds and miliseconds) to the current od date. A parameter can be used to set the 0 time to the endDate (when using ranged dates).
 
-*Usage:* beginOfDay( [useEndDate] )
-*Parameters:*
-* **useEndDate** Boolean, to specify if the time 0:0:00 will be set to the end date
+*Usage:* beginOfDay( [useEndDate] )  
+*Parameters:*   
+* **useEndDate** Boolean, to specify if the time 0:0:00 will be set to the end date.  
 *Returns:* none  
 *Example:*  
 ```javascript
 od.beginOfDay();
 od.range('week').beginOfDay();
 od.range('week').beginOfDay( true );
-´´´
+```
 
 #### endOfDay
 Set time 23:59:59 9999 (hours, minutes, seconds and miliseconds) to the current od date. A parameter can be used to set the 0 time to the endDate (when using ranged dates).
 
-*Usage:* endOfDay( [useEndDate] )
-*Parameters:*
-* **useEndDate** Boolean, to specify if the time 0:0:00 will be set to the end date
+*Usage:* endOfDay( [useEndDate] )  
+*Parameters:*  
+* **useEndDate** Boolean, to specify if the time 0:0:00 will be set to the end date.  
 *Returns:* none  
-*Example:*  
+*Example:*
 ```javascript
 od.endOfDay('end');
 od.range('week').endOfDay( true );
-´´´
+```
 
 ### 3) Formatting
 
 #### output
-Returns the current values of the date or an object with two dates (startDate and endDate). 
+Returns the current values of the date or an object with two dates (startDate and endDate).  
 The method will return a date object (or a pair of such) if no parameter is used.
 If a parameter is used the method will return formatted string (or a pair of such).
 
-*Usage:* output( [format] )
-*Parameters:*
-* **format** String with a standar js date format, more on js date formats on the [Language Specification](http://www.ecma-international.org/ecma-262/6.0/#sec-date-time-string-format).
-*Returns:* Date object or formatted string
+*Usage:* output( [format] )  
+*Parameters:*  
+* **format** String with a standar js date format, more on js date formats on the [Language Specification](http://www.ecma-international.org/ecma-262/6.0/#sec-date-time-string-format).  
+*Returns:* Date object or formatted string  
 *Example:*  
 ```javascript
 od.output();
 od.simple().output();
 od.range('week').output();
 od.range('week').output(1);
-´´´
+```
 
 ### 4) Special functions:
 
@@ -134,20 +134,19 @@ These methods should be used directly, no configuration needed.
 
 #### getHolidays
 
-Returns an array with the holidays for the location on the parameters. US is the default location.
+Returns an array with the holidays for the location on the parameters. US is the default location. You can use offset method to retrieve holidays from other years.
 
-*Usage:* getHolidays( [country] )
-*Parameters:*
-* **format** String with the country. Possible values: us|mx.
-You can use offset method to retrieve holidays from other years.
-*Returns:* array with date objects
+*Usage:* getHolidays( [country] )  
+*Parameters:*  
+* **format** String with the country. Possible values: us|mx.  
+*Returns:* array with date objects  
 *Example:*  
 ```javascript
 od.output();
 od.simple().output();
 od.range('week').output();
 od.range('week').output(1);
-´´´
+```
 
 ### TODO
 * Custom date output format.
