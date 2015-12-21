@@ -57,7 +57,8 @@ You can calculate dates or ranges of dates. two dates will be created: *startDat
 
 **Usage:** od.range( [period] )  
 **Parameters:**  
-- *[period]* String with possible values: week|month|year|quarter  
+- *[period]* String with possible values: week|month|year|quarter
+
 **Return:** none  
 **Example:**  
 ```javascript
@@ -74,7 +75,8 @@ Offset (adds or subtract) a specific period of time to the calculated dates, acc
 **Usage:** offset( amount, period )  
 **Parameters:**  
 - *amount*: Integer number, used to skip specified period of time.
-- *period*: String value, representation of the period, can be weeks|months|years|periods  
+- *period*: String value, representation of the period, can be weeks|months|years|periods
+
 **Return:** none  
 **Example:**  
 ```javascript
@@ -87,7 +89,8 @@ Set time 0:0:00 0000 (hours, minutes, seconds and miliseconds) to the current od
 
 **Usage:** beginOfDay( [useEndDate] )  
 **Parameters:**   
-- *[useEndDate]* Boolean, to specify if the time 0:0:00 will be set to the end date.  
+- *[useEndDate]* Boolean, to specify if the time 0:0:00 will be set to the end date.
+
 **Return:** none  
 **Example:**  
 ```javascript
@@ -101,7 +104,8 @@ Set time 23:59:59 9999 (hours, minutes, seconds and miliseconds) to the current 
 
 **Usage:** endOfDay( [useEndDate] )  
 **Parameters:**  
-- *[useEndDate]* Boolean, to specify if the time 0:0:00 will be set to the end date.  
+- *[useEndDate]* Boolean, to specify if the time 0:0:00 will be set to the end date.
+
 **Return:** none  
 **Example:**
 ```javascript
@@ -139,8 +143,9 @@ Returns an array with the holidays for the location on the parameters. US is the
 
 **Usage:** getHolidays( [country_code] )  
 **Parameters:**  
-- *[country_code]* String with the country. Possible values: us|mx.  
-**Returns:** array with date objects  
+- *[country_code]* String with the country. Possible values: us|mx.
+
+**Return:** array with date objects  
 **Example:**  
 ```javascript
 od.output();
