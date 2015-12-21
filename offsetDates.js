@@ -3,7 +3,7 @@
 // version - 0.1.11
 // author - Alfredo Alonso
 // license - MIT
-gsDate = (function() {
+od = (function() {
     var _currDate,
         _startDate,
         _endDate,

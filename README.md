@@ -1,5 +1,8 @@
 # offset-dates (version 0.1.11)
-Lightweigth library to calculate and play with dates and ranges of dates.
+Lightweigth no-dependencies js library to calculate and play with dates and ranges of dates.
+Released under the terms of the MIT license. Feel free to use this, fork, contribute or let me know if you would like to see other methods included in the library.
+
+## Documentation
 
 To start using the offsetdate library you just need to include the js file into your code.
 
@@ -7,8 +10,10 @@ To start using the offsetdate library you just need to include the js file into 
 <script src="offsetdates.min.js"></script>
 ```
 
-You don't have to initialize the library, once the js file is included the object is ready to be used.
-You can (and it's strongly recommended that you should) chain functions... even when you can do this:
+Once the js file is included, an object called *od* is created and ready to be used.
+You can (and it's strongly recommended that you do) chain functions.
+
+Even when you can do this:
 
 ```javascript
 var date1 = od();
@@ -23,20 +28,17 @@ you should do this instead:
 od().range('week').offset(-2, 'weeks').output();
 ```
 
-The offsetdates usage (od from now on) can be divided into 4 sections:
-
-1) [initialization]()
-2) [operations]()
-3) [formatting]()
-4) [special functions]()
+The library usage (od) can be divided into 4 main sections:
 
 ### 1) Initialization
 
+Couple of initialization methods.
+
 #### single
-default usage, a date will be created
-*usage* od.single();
-*parameters* none
-*returns* none
+Default usage, an object with a single date will be created.
+ *usage* od.single();
+ *parameters* none
+ *returns* none
 
 examples:
 
