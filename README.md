@@ -32,15 +32,14 @@ The library usage (od) can be divided into 4 main sections:
 
 ### 1) Initialization
 
-Couple of initialization methods.
+Couple of initialization modes.
 
 #### single
 Default usage, an object with a single date will be created.
 
-*usage* od.single();
-*parameters* none
-
-*returns* none
+> **Usage:** od.single();
+> **Parameters:** none
+> **Returns:** none
 
 examples:
 
