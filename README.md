@@ -116,11 +116,11 @@ Returns the current values of the date or an object with two dates (startDate an
 The method will return a date object (or a pair of such) if no parameter is used.
 If a parameter is used the method will return formatted string (or a pair of such).
 
-*Usage:* output( [format] )  
-*Parameters:*  
-* **format** String with a standar js date format, more on js date formats on the [Language Specification](http://www.ecma-international.org/ecma-262/6.0/#sec-date-time-string-format).  
-*Returns:* Date object or formatted string  
-*Example:*  
+**Usage:** .output( [format] )  
+**Parameters:**  
+- *[format]* String with a standar js date format, more on js date formats on the [Language Specification](http://www.ecma-international.org/ecma-262/6.0/#sec-date-time-string-format).  
+**Returns:** Date object or formatted string  
+**Example:**
 ```javascript
 od.output();
 od.simple().output();
