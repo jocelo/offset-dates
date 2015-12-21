@@ -37,9 +37,9 @@ Couple of initialization modes.
 #### single
 Default usage, an object with a single date will be created.
 
-> **Usage:** od.single();
-> **Parameters:** none
-> **Returns:** none
+**Usage:** od.single();
+**Parameters:** none
+**Returns:** none
 
 examples:
 
