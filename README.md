@@ -1,4 +1,4 @@
-# offset-dates (version 0.1.11)
+# offset-dates (version 0.1.12)
 Lightweigth no-dependencies js library to calculate and play with dates and ranges of dates.
 
 One of the key elements is that you can use the range initiator to return a pair of dates, and you can perform operations on those dates through the offset method.
