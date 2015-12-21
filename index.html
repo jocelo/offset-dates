@@ -1,51 +1,54 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-us">
   <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+    <meta charset="UTF-8">
     <title>Offset-dates by jocelo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
   </head>
-
   <body>
-    <div id="container">
-      <div class="inner">
+    <section class="page-header">
+      <h1 class="project-name">Offset-dates</h1>
+      <h2 class="project-tagline">js library to play with dates</h2>
+      <a href="https://github.com/jocelo/offset-dates" class="btn">View on GitHub</a>
+      <a href="https://github.com/jocelo/offset-dates/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/jocelo/offset-dates/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
 
-        <header>
-          <h1>Offset-dates</h1>
-          <h2>js library to play with dates</h2>
-        </header>
+    <section class="main-content">
+      <h1>
+<a id="offset-dates-version-1012" class="anchor" href="#offset-dates-version-1012" aria-hidden="true"><span class="octicon octicon-link"></span></a>offset-dates (version 1.0.12)</h1>
 
-        <section id="downloads" class="clearfix">
-          <a href="https://github.com/jocelo/offset-dates/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
-          <a href="https://github.com/jocelo/offset-dates/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
-          <a href="https://github.com/jocelo/offset-dates" id="view-on-github" class="button"><span>View on GitHub</span></a>
-        </section>
+<p>Lightweigth no-dependencies js library to calculate and play with dates and ranges of dates.</p>
 
-        <hr>
+<p>One of the key elements is that you can use the range initiator to return a pair of dates, and you can perform operations on those dates through the offset method.</p>
 
-        <section id="main_content">
-          <h1>
-<a id="offset-dates" class="anchor" href="#offset-dates" aria-hidden="true"><span class="octicon octicon-link"></span></a>offset-dates</h1>
+<p>Released under the terms of the MIT license. Feel free to use this, fork, contribute or let me know if you would like to see other methods included in the library.</p>
 
-<p>js library to play with dates</p>
-
-<p>Lightweigth library to calculate different dates and ranges.</p>
-
-<p>Current version 0.1.11</p>
+<h2>
+<a id="documentation" class="anchor" href="#documentation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Documentation</h2>
 
 <p>To start using the offsetdate library you just need to include the js file into your code.</p>
 
 <div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>offsetdates.min.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</pre></div>
 
-<p>You don't have to initialize the library, once the js file is included the object is ready to be used.
-You can (and it's strongly recommended that you should) chain functions... even when you can do this:</p>
+<p>Once the js file is included, an object called <em>od</em> is created and ready to be used. If you don't use any of the helper functions, you will get an object created whit the current system date.<br>
+You can (and it's strongly recommended that you do) chain functions.</p>
+
+<h3>
+<a id="hello-world" class="anchor" href="#hello-world" aria-hidden="true"><span class="octicon octicon-link"></span></a>Hello world!</h3>
+
+<p>Easy as ever:</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-smi">od</span>.<span class="pl-en">output</span>(); <span class="pl-c">// date in local time</span></pre></div>
+
+<h3>
+<a id="chaining" class="anchor" href="#chaining" aria-hidden="true"><span class="octicon octicon-link"></span></a>Chaining</h3>
+
+<p>Even when you can do this:</p>
 
 <div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> date1 <span class="pl-k">=</span> <span class="pl-en">od</span>();
 <span class="pl-smi">date1</span>.<span class="pl-en">range</span>();
@@ -56,110 +59,163 @@ You can (and it's strongly recommended that you should) chain functions... even 
 
 <div class="highlight highlight-source-js"><pre><span class="pl-en">od</span>().<span class="pl-en">range</span>(<span class="pl-s"><span class="pl-pds">'</span>week<span class="pl-pds">'</span></span>).<span class="pl-en">offset</span>(<span class="pl-k">-</span><span class="pl-c1">2</span>, <span class="pl-s"><span class="pl-pds">'</span>weeks<span class="pl-pds">'</span></span>).<span class="pl-en">output</span>();</pre></div>
 
-<p>The offsetdates methods (od from now on) can be divided into sections:</p>
+<h2>
+<a id="methods" class="anchor" href="#methods" aria-hidden="true"><span class="octicon octicon-link"></span></a>Methods</h2>
 
-<p>(1) initialization | (2) operations | (3) formatting | (4) special functions</p>
+<p>The usage can be divided into 4 main sections:</p>
 
 <h3>
 <a id="1-initialization" class="anchor" href="#1-initialization" aria-hidden="true"><span class="octicon octicon-link"></span></a>1) Initialization</h3>
 
-<h4>
-<a id="single" class="anchor" href="#single" aria-hidden="true"><span class="octicon octicon-link"></span></a>single</h4>
-
-<p>default usage, one date will be created
-usage od.single();
-no parameters
-returns: none</p>
-
-<p>examples:</p>
-
-<table>
-<thead>
-<tr>
-<th>Code</th>
-<th>Output</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>od.single()</td>
-<td></td>
-</tr>
-</tbody>
-</table>
+<p>There are two initialization modes, single mode is the default one.</p>
 
 <h4>
-<a id="range" class="anchor" href="#range" aria-hidden="true"><span class="octicon octicon-link"></span></a>range</h4>
+<a id="single" class="anchor" href="#single" aria-hidden="true"><span class="octicon octicon-link"></span></a>single()</h4>
 
-<p>You can calculate dates or ranges of dates. two dates will be created: startDate and endDate</p>
+<p>Default usage, an object with a single date will be created.</p>
 
-<p>usage range([period])
-where
-    period: week|month|year|quarter
-returns: none</p>
+<ul>
+<li>
+<em>Usage:</em> od.single()</li>
+<li>
+<em>Parameters:</em> none</li>
+<li>
+<em>Returns:</em> none</li>
+</ul>
 
-<p>example:
-| Code        | Output |
-| ----------- | ------ |
-| od.range()  |        |
-| od.range('week') |        |</p>
+<h4>
+<a id="range" class="anchor" href="#range" aria-hidden="true"><span class="octicon octicon-link"></span></a>range()</h4>
 
-<p>od()
-od().range()
-od().range('week')</p>
+<p>You can calculate dates or ranges of dates. two dates will be created: <em>startDate</em> and <em>endDate</em>. If no period is specified, both start and end date will hold the same date/time value.</p>
+
+<ul>
+<li>
+<em>Usage:</em> od.range( [period] )</li>
+<li>
+<em>Parameters:</em>
+
+<ul>
+<li>
+<em>[period]</em> String with possible values: week|month|year|quarter</li>
+</ul>
+</li>
+<li>
+<em>Return:</em> none</li>
+<li><em>Example:</em></li>
+</ul>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-en">od</span>();
+<span class="pl-en">od</span>().<span class="pl-en">range</span>();
+<span class="pl-en">od</span>().<span class="pl-en">range</span>(<span class="pl-s"><span class="pl-pds">'</span>week<span class="pl-pds">'</span></span>);</pre></div>
 
 <h3>
 <a id="2-operations" class="anchor" href="#2-operations" aria-hidden="true"><span class="octicon octicon-link"></span></a>2) Operations</h3>
 
 <h4>
-<a id="offset" class="anchor" href="#offset" aria-hidden="true"><span class="octicon octicon-link"></span></a>offset</h4>
+<a id="offset" class="anchor" href="#offset" aria-hidden="true"><span class="octicon octicon-link"></span></a>offset()</h4>
 
-<p>offset an specific period of time to the calculated dates
-usage: .offset(amount,period)
-where:
-    amount: Integer number for the jump
-    period: string representation of period, can be weeks|months|years|periods
-returns: none</p>
+<p>Offset (adds or subtract) a specific period of time to the calculated dates, accordingly to the parameters used.</p>
 
-<p>examples:
-od.range('week').offset(1,'week').output()
-od.range('week').offset(-1,'week').output()</p>
+<ul>
+<li>
+<em>Usage:</em> offset( amount, period )</li>
+<li>
+<em>Parameters:</em>
+
+<ul>
+<li>
+<em>amount</em>: Integer number, used to skip specified period of time.</li>
+<li>
+<em>period</em>: String value, representation of the period, can be weeks|months|years|periods</li>
+</ul>
+</li>
+<li>
+<em>Return:</em> none</li>
+<li><em>Example:</em></li>
+</ul>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-smi">od</span>.<span class="pl-en">range</span>(<span class="pl-s"><span class="pl-pds">'</span>week<span class="pl-pds">'</span></span>).<span class="pl-en">offset</span>(<span class="pl-c1">1</span>,<span class="pl-s"><span class="pl-pds">'</span>week<span class="pl-pds">'</span></span>);
+<span class="pl-smi">od</span>.<span class="pl-en">range</span>(<span class="pl-s"><span class="pl-pds">'</span>week<span class="pl-pds">'</span></span>).<span class="pl-en">offset</span>(<span class="pl-k">-</span><span class="pl-c1">1</span>,<span class="pl-s"><span class="pl-pds">'</span>week<span class="pl-pds">'</span></span>);</pre></div>
 
 <h4>
-<a id="beginofday" class="anchor" href="#beginofday" aria-hidden="true"><span class="octicon octicon-link"></span></a>beginOfDay</h4>
+<a id="beginofday" class="anchor" href="#beginofday" aria-hidden="true"><span class="octicon octicon-link"></span></a>beginOfDay()</h4>
 
-<p>set the time 0:0:00 0000 (hours, minutes, seconds and miliseconds to the specified date, the parameter can be used to set the begin of date to the endDate, for when you are using range
-usage: beginOfDay([useEndDate])
-where:
-    endDate: if specified, the time 0:0:00 will be set to the end date (when range used)
-returns: none</p>
+<p>Set time 0:0:00 0000 (hours, minutes, seconds and miliseconds) to the current od date. A parameter can be used to set the 0 time to the endDate (when using ranged dates).</p>
+
+<ul>
+<li>
+<em>Usage:</em> beginOfDay( [useEndDate] )</li>
+<li>
+<em>Parameters:</em>
+
+<ul>
+<li>
+<em>[useEndDate]</em> Boolean, to specify if the time 0:0:00 will be set to the end date.</li>
+</ul>
+</li>
+<li>
+<em>Return:</em> none</li>
+<li><em>E.g.</em></li>
+</ul>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-smi">od</span>.<span class="pl-en">beginOfDay</span>();
+<span class="pl-smi">od</span>.<span class="pl-en">range</span>(<span class="pl-s"><span class="pl-pds">'</span>week<span class="pl-pds">'</span></span>).<span class="pl-en">beginOfDay</span>();
+<span class="pl-smi">od</span>.<span class="pl-en">range</span>(<span class="pl-s"><span class="pl-pds">'</span>week<span class="pl-pds">'</span></span>).<span class="pl-en">beginOfDay</span>( <span class="pl-c1">true</span> );</pre></div>
 
 <h4>
-<a id="endofday" class="anchor" href="#endofday" aria-hidden="true"><span class="octicon octicon-link"></span></a>endOfDay</h4>
+<a id="endofday" class="anchor" href="#endofday" aria-hidden="true"><span class="octicon octicon-link"></span></a>endOfDay()</h4>
 
-<p>set the time 23:59:59 99 (hours, minutes, seconds and miliseconds to the specified date, the parameter can be used to set the begin of date to the endDate, for when you are using range
-usage: endOfDay([useEndDate])
-where:
-    endDate: if specified, the time 0:0:00 will be set to the end date (when range used)
-returns: none</p>
+<p>Set time 23:59:59 9999 (hours, minutes, seconds and miliseconds) to the current od date. A parameter can be used to set the 0 time to the endDate (when using ranged dates).</p>
+
+<ul>
+<li>
+<em>Usage:</em> endOfDay( [useEndDate] )</li>
+<li>
+<em>Parameters:</em>
+
+<ul>
+<li>
+<em>[useEndDate]</em> Boolean, to specify if the time 0:0:00 will be set to the end date.</li>
+</ul>
+</li>
+<li>
+<em>Return:</em> none</li>
+<li><em>Example:</em></li>
+</ul>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-smi">od</span>.<span class="pl-en">endOfDay</span>(<span class="pl-s"><span class="pl-pds">'</span>end<span class="pl-pds">'</span></span>);
+<span class="pl-smi">od</span>.<span class="pl-en">range</span>(<span class="pl-s"><span class="pl-pds">'</span>week<span class="pl-pds">'</span></span>).<span class="pl-en">endOfDay</span>( <span class="pl-c1">true</span> );</pre></div>
 
 <h3>
 <a id="3-formatting" class="anchor" href="#3-formatting" aria-hidden="true"><span class="octicon octicon-link"></span></a>3) Formatting</h3>
 
 <h4>
-<a id="output" class="anchor" href="#output" aria-hidden="true"><span class="octicon octicon-link"></span></a>output</h4>
+<a id="output" class="anchor" href="#output" aria-hidden="true"><span class="octicon octicon-link"></span></a>output()</h4>
 
-<p>Returns the calculated dates, if no parameter is used, the method will return the date objects, string formatted otherwise
-usage output([format])
-where
-    format can be an standar js date format 
-returns: none</p>
+<p>Returns the current values of the date or an object with two dates (startDate and endDate).<br>
+The method will return a date object (or a pair of such) if no parameter is used.
+If a parameter is used the method will return formatted string (or a pair of such).</p>
 
-<p>examples:
-od.output()
-od.simple().output
-od.range('week').output()
-od.range('week').output(1)</p>
+<ul>
+<li>
+<em>Usage:</em> .output( [format] )</li>
+<li>
+<em>Parameters:</em>
+
+<ul>
+<li>
+<em>[format]</em> String with a standar js date format, more on js date formats on the <a href="http://www.ecma-international.org/ecma-262/6.0/#sec-date-time-string-format">Language Specification</a>.</li>
+</ul>
+</li>
+<li>
+<em>Return:</em> Date object or formatted string</li>
+<li><em>Example:</em></li>
+</ul>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-smi">od</span>.<span class="pl-en">output</span>();
+<span class="pl-smi">od</span>.<span class="pl-en">simple</span>().<span class="pl-en">output</span>();
+<span class="pl-smi">od</span>.<span class="pl-en">range</span>(<span class="pl-s"><span class="pl-pds">'</span>week<span class="pl-pds">'</span></span>).<span class="pl-en">output</span>();
+<span class="pl-smi">od</span>.<span class="pl-en">range</span>(<span class="pl-s"><span class="pl-pds">'</span>week<span class="pl-pds">'</span></span>).<span class="pl-en">output</span>(<span class="pl-c1">1</span>);</pre></div>
 
 <h3>
 <a id="4-special-functions" class="anchor" href="#4-special-functions" aria-hidden="true"><span class="octicon octicon-link"></span></a>4) Special functions:</h3>
@@ -167,43 +223,57 @@ od.range('week').output(1)</p>
 <p>These methods should be used directly, no configuration needed.</p>
 
 <h4>
-<a id="getholidays" class="anchor" href="#getholidays" aria-hidden="true"><span class="octicon octicon-link"></span></a>getHolidays</h4>
+<a id="getholidays" class="anchor" href="#getholidays" aria-hidden="true"><span class="octicon octicon-link"></span></a>getHolidays()</h4>
 
-<p>get an array with the holidays for the specified location
-usage: getHolidays([country])
-where:
-    country could be us|mx
-by default, the us holidays will be returned
-returns: array with date objects, from holidays within specified year
-( can be used with offset, to retrieve holidays from a specific year )</p>
+<p>Returns an array with the holidays for the location on the parameters. US is the default location. You can use offset method to retrieve holidays from other years.</p>
+
+<ul>
+<li>
+<em>Usage:</em> getHolidays( [country_code] )</li>
+<li>
+<em>Parameters:</em>
+
+<ul>
+<li>
+<em>[country_code]</em> String with the country. Possible values: us|mx.</li>
+</ul>
+</li>
+<li>
+<em>Return:</em> array with date objects</li>
+<li><em>Example:</em></li>
+</ul>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-smi">od</span>.<span class="pl-en">output</span>();
+<span class="pl-smi">od</span>.<span class="pl-en">simple</span>().<span class="pl-en">output</span>();
+<span class="pl-smi">od</span>.<span class="pl-en">range</span>(<span class="pl-s"><span class="pl-pds">'</span>week<span class="pl-pds">'</span></span>).<span class="pl-en">output</span>();
+<span class="pl-smi">od</span>.<span class="pl-en">range</span>(<span class="pl-s"><span class="pl-pds">'</span>week<span class="pl-pds">'</span></span>).<span class="pl-en">output</span>(<span class="pl-c1">1</span>);</pre></div>
 
 <h3>
 <a id="todo" class="anchor" href="#todo" aria-hidden="true"><span class="octicon octicon-link"></span></a>TODO</h3>
 
-<p>In future commits, the following items will be included:</p>
+<p>Some updates to be including in future releases:</p>
 
 <ul>
-<li>Custom date for library initialization</li>
-<li>Fiscal Week of current week</li>
-<li>First day of month</li>
-<li>Last day of month</li>
-<li>Mutiple dates array results, to be used in select</li>
-<li>Test cases</li>
+<li>Custom date output format.</li>
+<li>Fiscal Weeks.</li>
+<li>First/last day of month/year.</li>
+<li>Mutiple dates array results, to be used directly in documents.</li>
+<li>Test cases.</li>
 </ul>
 
 <h2>
 <a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h2>
 
-<p>offsetDates.js is freely distributable under the terms of the <a href="https://github.com">MIT license</a>.</p>
-        </section>
+<p>offsetDates.js is freely distributable under the terms of the <a href="https://github.com/jocelo/offset-dates/blob/master/LICENSE">MIT license</a>.</p>
 
-        <footer>
-          Offset-dates is maintained by <a href="https://github.com/jocelo">jocelo</a><br>
-          This page was generated by <a href="https://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
-        </footer>
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/jocelo/offset-dates">Offset-dates</a> is maintained by <a href="https://github.com/jocelo">jocelo</a>.</span>
 
-        
-      </div>
-    </div>
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
   </body>
 </html>
